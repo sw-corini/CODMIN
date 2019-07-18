@@ -1,15 +1,16 @@
-import React from "react";
+import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
 import App from "./Components/App";
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
 const Global = createGlobalStyle`
-${reset};`;
-
+${reset};
+`;
 ReactDOM.render(
-    <App>
+    <Fragment>
+        <App />
         <Global />
-    </App>,
+    </Fragment>,
     document.getElementById("root")
 );
