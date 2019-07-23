@@ -4,7 +4,7 @@ import Home from "../Components/Home";
 const Menu = [
     {
         id: "Home",
-        name: "홈",
+        name: "Home",
         link: "/",
         icon: "home",
         isLogin: false,
@@ -12,7 +12,7 @@ const Menu = [
     },
     {
         id: "DashBoard",
-        name: "대시보드",
+        name: "Dashboard",
         link: "/dashboard",
         icon: "chart-bar",
         isLogin: true,
