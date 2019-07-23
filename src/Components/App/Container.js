@@ -21,6 +21,8 @@ class Container extends PureComponent {
         };
 
         this.state = {
+            rowHeight: 30,
+            cols: { lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 },
             layouts: JSON.parse(JSON.stringify(originalLayouts)),
             onLayoutChange: this._onLayoutChange,
             resetLayout: this._resetLayout
@@ -37,7 +39,3 @@ class Container extends PureComponent {
 }
 
 export default Container;
-
-if (require.main === module) {
-    require("../../hook.jsx")(module.exports);
-}

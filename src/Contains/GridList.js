@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-export const GridBox = styled.div`
+export const GridList = styled.div`
+    height: 100%;
     background-color: lightgreen;
 
     .react-grid-item {
