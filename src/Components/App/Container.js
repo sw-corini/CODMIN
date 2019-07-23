@@ -3,7 +3,6 @@ import { ThemeProvider } from "styled-components";
 import Presenter from "./Presenter";
 import Store from "../../store";
 import theme from "../../Contains/Theme";
-import { tsThisType } from "@babel/types";
 
 class Container extends PureComponent {
     constructor(props) {
