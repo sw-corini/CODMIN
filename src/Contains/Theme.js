@@ -1,7 +1,7 @@
 const theme = {
-    mainColor: "#1E3D6B",
+    mainColor: "#235180",
     subColor: "#eee",
-    pointColor: "#5995dd",
+    pointColor: "#F99B2E",
     menuBarWidth: "200px",
     headerHeight: "50px"
 };

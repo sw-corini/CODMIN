@@ -38,12 +38,22 @@ const Presenter = () => (
                         </Title>
                         <ul>{Menu.map(printListItem)}</ul>
                     </MenuNavigation>
-                    {Menu.map(printRouteItem)}
+                    <Container>{Menu.map(printRouteItem)}</Container>
                 </Router>
             );
         }}
     </Store.Consumer>
 );
+
+const Container = styled.div`
+    position: fixed;
+    overflow-y: auto;
+    top: ${props => props.theme.headerHeight};
+    left: ${props => props.theme.menuBarWidth};
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+`;
 
 const Title = styled.h1`
     a {
@@ -65,10 +75,10 @@ const MenuNavigation = styled.nav`
 
     li {
         &:first-child {
-            border-top: 1px rgba(255, 255, 255, 0.2) solid;
+            border-top: 1px rgba(255, 255, 255, 0.1) solid;
         }
 
-        border-bottom: 1px rgba(255, 255, 255, 0.2) solid;
+        border-bottom: 1px rgba(255, 255, 255, 0.1) solid;
 
         a {
             color: rgba(255, 255, 255, 0.7);
