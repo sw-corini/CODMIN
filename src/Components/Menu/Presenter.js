@@ -11,19 +11,21 @@ import Menu from "../../Contains/Routes";
 import Store from "../../store";
 import logo from "../../assets/images/smile.svg"
 
-const printListItem = item => (
-    <li key={item.id}>
+const printListItem = item => {
+    const { id, subMenu, link, name, icon } = item;
+    return (
+        <li key={id}>
         <NavLink
-            exact={item.id === "Home" ? true : false}
+            exact={id === "Home" ? true : false}
             activeClassName="active"
-            to={item.link}
+            to={link}
         >
-            <FontAwesomeIcon icon={item.icon} />
-            {item.name}
+            <FontAwesomeIcon icon={icon} />
+            {name}
         </NavLink>
-    </li>
-);
-
+        </li>
+    )
+}
 const printRouteItem = item => (
     <Route key={item.id} path={item.link} exact component={item.component} />
 );
