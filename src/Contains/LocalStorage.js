@@ -1,8 +1,8 @@
-export const getFromLS = key => {
+export const getLayoutFormLocalStorage = (page, key) => {
     let ls = {};
     if (global.localStorage) {
         try {
-            ls = JSON.parse(global.localStorage.getItem("rgl-8")) || {};
+            ls = JSON.parse(global.localStorage.getItem(page)) || {};
         } catch (e) {
             /*Ignore*/
         }
@@ -10,10 +10,10 @@ export const getFromLS = key => {
     return ls[key];
 };
 
-export const saveToLS = (key, value) => {
+export const saveLayoutToLocalStorage = (page, key, value) => {
     if (global.localStorage) {
         global.localStorage.setItem(
-            "rgl-8",
+            page,
             JSON.stringify({
                 [key]: value
             })
