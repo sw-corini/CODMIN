@@ -1,9 +1,8 @@
 const theme = {
-    mainColor: "#235180",
-    subColor: "#eee",
-    pointColor: "#F99B2E",
-    menuBarWidth: "200px",
-    headerHeight: "50px"
+    mainColor: "#232C33",
+    pointColor: "#A27CE6",
+    menuBarWidth: "250px",
+    headerHeight: "60px"
 };
 
 export default theme;

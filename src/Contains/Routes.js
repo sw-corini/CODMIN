@@ -6,7 +6,7 @@ const Menu = [
         id: "Home",
         name: "Home",
         link: "/",
-        icon: "home",
+        icon: "columns",
         isLogin: false,
         component: Home
     },
@@ -14,7 +14,7 @@ const Menu = [
         id: "DashBoard",
         name: "Dashboard",
         link: "/dashboard",
-        icon: "chart-bar",
+        icon: "chart-line",
         isLogin: true,
         component: Coin
     }

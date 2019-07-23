@@ -4,7 +4,7 @@ import Store from "../../store";
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
-const Presenter = () => (
+const Presenter = () => ( 
     <Store.Consumer>
         {store => {
             const {
@@ -12,12 +12,14 @@ const Presenter = () => (
                 onLayoutChange,
                 cols,
                 rowHeight,
-                setPageTitle
+                setPageTitle,
+                gridMargin
             } = store;
 
             return (
                 <ResponsiveReactGridLayout
                     className="layout"
+                    margin={gridMargin}
                     cols={cols}
                     rowHeight={rowHeight}
                     layouts={layouts}

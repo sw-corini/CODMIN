@@ -16,13 +16,13 @@ const Header = styled.header`
     top: 0;
     left: ${props => props.theme.menuBarWidth}
     right: 0;
-    background-color: ${props => props.theme.subColor};
+    background-color: #fff;
     display:flex;
     align-items:center;
     padding:0 20px;
 
     span {
-        color:rgba(0, 0, 0, 0.5);
+        color:rgba(0, 0, 0, 0.8);
         font-size:14px;
     }
 `;

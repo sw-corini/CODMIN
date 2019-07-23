@@ -9,6 +9,7 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Menu from "../../Contains/Routes";
 import Store from "../../store";
+import logo from "../../assets/images/smile.svg"
 
 const printListItem = item => (
     <li key={item.id}>
@@ -34,7 +35,7 @@ const Presenter = () => (
                 <Router>
                     <MenuNavigation>
                         <Title>
-                            <Link to="/">CODMIN</Link>
+                            <img src={logo} /><span>CODMIN</span>
                         </Title>
                         <ul>{Menu.map(printListItem)}</ul>
                     </MenuNavigation>
@@ -52,16 +53,20 @@ const Container = styled.div`
     left: ${props => props.theme.menuBarWidth};
     bottom: 0;
     right: 0;
-    padding: 20px;
 `;
 
 const Title = styled.h1`
-    a {
-        color: #fff;
-        display: block;
-        text-align: center;
-        line-height: ${props => props.theme.headerHeight};
-        font-weight: bold;
+    padding:0 20px;
+    background-color:rgba(0,0,0,0.3);
+
+    color: #fff;
+    display: flex;
+    height: ${props => props.theme.headerHeight};
+    font-weight: bold;
+    align-items:center;
+
+    img {
+        margin-right:10px;
     }
 `;
 
@@ -74,17 +79,11 @@ const MenuNavigation = styled.nav`
     bottom: 0;
 
     li {
-        &:first-child {
-            border-top: 1px rgba(255, 255, 255, 0.1) solid;
-        }
-
-        border-bottom: 1px rgba(255, 255, 255, 0.1) solid;
-
         a {
             color: rgba(255, 255, 255, 0.7);
             font-size: 14px;
             display: block;
-            line-height: 30px;
+            line-height: 40px;
             padding: 5px 20px;
             font-weight: 300;
 

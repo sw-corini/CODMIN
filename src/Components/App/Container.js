@@ -35,6 +35,7 @@ class Container extends PureComponent {
         this.state = {
             pageTitle: "CODEMIN",
             setPageTitle: this._setPageTitle,
+            gridMargin:[20,20],
             rowHeight: 30,
             cols: { lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 },
             layouts: JSON.parse(JSON.stringify(this.originalLayouts)),
