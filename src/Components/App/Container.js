@@ -3,12 +3,22 @@ import { ThemeProvider } from "styled-components";
 import Presenter from "./Presenter";
 import Store from "../../store";
 import theme from "../../Contains/Theme";
+import { tsThisType } from "@babel/types";
 
 class Container extends PureComponent {
     constructor(props) {
         super(props);
 
-        this.state = {};
+        this._setPageTitle = pageTitle => {
+            this.setState({
+                pageTitle
+            });
+        };
+
+        this.state = {
+            pageTitle: "CODEMIN",
+            setPageTitle: this._setPageTitle
+        };
     }
 
     render() {
