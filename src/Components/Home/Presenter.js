@@ -4,7 +4,7 @@ import Store from "../../store";
 const Presenter = () => (
     <Store.Consumer>
         {store => {
-            return <div>Login</div>;
+            return <div>HOME</div>;
         }}
     </Store.Consumer>
 );

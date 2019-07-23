@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import Presenter from "./Presenter";
 
+const pageName = "CoinDashBoard";
+
 class Container extends Component {
-    state = {};
     render() {
-        return <Presenter {...this.state} />;
+        return <Presenter {...this.state} {...this.props} />;
     }
 }
 
