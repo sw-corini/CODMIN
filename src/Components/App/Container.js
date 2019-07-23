@@ -1,6 +1,8 @@
 import React, { PureComponent } from "react";
+import { ThemeProvider } from "styled-components";
 import Presenter from "./Presenter";
 import Store from "../../store";
+import theme from "../../Contains/Theme";
 
 class Container extends PureComponent {
     constructor(props) {
@@ -11,9 +13,11 @@ class Container extends PureComponent {
 
     render() {
         return (
-            <Store.Provider value={this.state}>
-                <Presenter />
-            </Store.Provider>
+            <ThemeProvider theme={theme}>
+                <Store.Provider value={this.state}>
+                    <Presenter />
+                </Store.Provider>
+            </ThemeProvider>
         );
     }
 }

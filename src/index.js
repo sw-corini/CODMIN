@@ -1,18 +1,20 @@
-import React, { Fragment } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import App from "./Components/App";
 import { createGlobalStyle } from "styled-components";
 import "./assets/css/react-grid-layout.css";
 import "./assets/css/react-resizable.css";
+import "./Contains/FontAwesome";
 import reset from "styled-reset";
 
 const Global = createGlobalStyle`
-${reset};
+    ${reset};
 `;
+
 ReactDOM.render(
-    <Fragment>
+    <>
         <App />
         <Global />
-    </Fragment>,
+    </>,
     document.getElementById("root")
 );
