@@ -27,7 +27,15 @@ const printListItem = item => {
     );
 };
 const printRouteItem = item => (
-    <Route key={item.id} path={item.link} exact component={item.component} />
+    // <Route key={item.id} path={item.link} exact component={item.component} />
+    <Route
+        key={item.id}
+        path={item.link}
+        exact
+        render={props => {
+            return <item.component title={item.title} />;
+        }}
+    />
 );
 
 const Presenter = () => (

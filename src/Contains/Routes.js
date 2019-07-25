@@ -9,7 +9,9 @@ const Menu = [
         link: "/",
         icon: "columns",
         isLogin: false,
-        component: Home
+        component: Home,
+        title: "Home",
+        type: "DashboardLayout"
     },
     {
         id: "DashBoard",
@@ -17,16 +19,16 @@ const Menu = [
         link: "/dashboard",
         icon: "chart-line",
         isLogin: true,
-        component: Coin
-    },
-    {
-        id: "DashBoard2",
-        name: "Dashboard2",
-        link: "/dashboard2",
-        icon: "chart-line",
-        isLogin: true,
-        component: Coin2
+        component: Coin,
+        title: "CoinDashboard",
+        type: "DashboardLayout"
     }
 ];
+
+export const getPageInfo = () => {
+    const pathName = window.location.pathname;
+    const thisRoute = Menu.filter(item => item.link === pathName);
+    return thisRoute[0] || {};
+};
 
 export default Menu;

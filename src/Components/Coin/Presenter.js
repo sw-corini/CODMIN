@@ -8,12 +8,13 @@ const Presenter = () => (
     <Store.Consumer>
         {store => {
             const {
-                layouts,
-                onLayoutChange,
-                cols,
-                rowHeight,
-                gridMargin,
-                pageTitle
+                setGridLayout: {
+                    layouts,
+                    onLayoutChange,
+                    cols,
+                    rowHeight,
+                    gridMargin
+                }
             } = store;
             return (
                 <ResponsiveReactGridLayout
