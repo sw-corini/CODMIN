@@ -1,5 +1,4 @@
 import Coin from "../Components/Coin";
-import Coin2 from "../Components/Coin2";
 import Home from "../Components/Home";
 
 const Menu = [

@@ -1,10 +1,5 @@
 import React from "react";
-import {
-    BrowserRouter as Router,
-    Route,
-    Link,
-    NavLink
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Menu from "../../Contains/Routes";
@@ -27,7 +22,6 @@ const printListItem = item => {
     );
 };
 const printRouteItem = item => (
-    // <Route key={item.id} path={item.link} exact component={item.component} />
     <Route
         key={item.id}
         path={item.link}
@@ -45,7 +39,7 @@ const Presenter = () => (
                 <Router>
                     <MenuNavigation>
                         <Title>
-                            <img src={logo} />
+                            <img src={logo} alt="CODMIN" />
                             <span>CODMIN</span>
                         </Title>
                         <ul>{Menu.map(printListItem)}</ul>
