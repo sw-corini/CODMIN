@@ -6,13 +6,11 @@ import { getLayoutFormLocalStorage } from "../../Contains/LocalStorage";
 class Container extends Component {
     static contextType = Store;
 
-    componentWillMount() {
+    componentDidMount() {
         const store = this.context;
         store.setPageTitle("Coin Dashboard");
         store.setLayoutPageLoaded("Coin Dashboard");
     }
-
-    componentDidMount() {}
     render() {
         return <Presenter {...this.state} {...this.props} />;
     }

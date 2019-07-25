@@ -47,11 +47,7 @@ class Container extends PureComponent {
         };
     }
     componentWillMount() {
-        // const layouts = getLayoutFormLocalStorage(
-        //     this.state.pageTitle,
-        //     "layouts"
-        // );
-        // this.setState({ layouts });
+        console.log(this.state.pageTitle);
     }
     componentDidMount() {
         console.log(1);
