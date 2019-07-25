@@ -25,23 +25,36 @@ class Container extends PureComponent {
 
         // 레이아웃 변경시 로컬스토리지에 저장
         this._onLayoutChange = (layout, layouts) => {
-            saveLayoutToLocalStorage(this.pageTitle, "layouts", layouts);
+            saveLayoutToLocalStorage(this.state.pageTitle, "layouts", layouts);
             this.setState({ layouts });
         };
 
-        this.originalLayouts =
-            getLayoutFormLocalStorage(this.pageTitle, "layouts") || {};
+        this._setLayoutPageLoaded = pageTitle => {
+            const layouts = getLayoutFormLocalStorage(pageTitle, "layouts");
+            this.setState({ layouts });
+        };
 
         this.state = {
-            pageTitle: "CODEMIN",
+            pageTitle: this.pageTitle,
             setPageTitle: this._setPageTitle,
-            gridMargin:[20,20],
+            setLayoutPageLoaded: this._setLayoutPageLoaded,
+            gridMargin: [20, 20],
             rowHeight: 30,
             cols: { lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 },
-            layouts: JSON.parse(JSON.stringify(this.originalLayouts)),
+            layouts: JSON.parse(JSON.stringify({})),
             onLayoutChange: this._onLayoutChange,
             resetLayout: this._resetLayout
         };
+    }
+    componentWillMount() {
+        // const layouts = getLayoutFormLocalStorage(
+        //     this.state.pageTitle,
+        //     "layouts"
+        // );
+        // this.setState({ layouts });
+    }
+    componentDidMount() {
+        console.log(1);
     }
 
     render() {

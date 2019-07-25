@@ -9,23 +9,23 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Menu from "../../Contains/Routes";
 import Store from "../../store";
-import logo from "../../assets/images/smile.svg"
+import logo from "../../assets/images/smile.svg";
 
 const printListItem = item => {
-    const { id, subMenu, link, name, icon } = item;
+    const { id, link, name, icon } = item;
     return (
         <li key={id}>
-        <NavLink
-            exact={id === "Home" ? true : false}
-            activeClassName="active"
-            to={link}
-        >
-            <FontAwesomeIcon icon={icon} />
-            {name}
-        </NavLink>
+            <NavLink
+                exact={id === "Home" ? true : false}
+                activeClassName="active"
+                to={link}
+            >
+                <FontAwesomeIcon icon={icon} />
+                {name}
+            </NavLink>
         </li>
-    )
-}
+    );
+};
 const printRouteItem = item => (
     <Route key={item.id} path={item.link} exact component={item.component} />
 );
@@ -37,7 +37,8 @@ const Presenter = () => (
                 <Router>
                     <MenuNavigation>
                         <Title>
-                            <img src={logo} /><span>CODMIN</span>
+                            <img src={logo} />
+                            <span>CODMIN</span>
                         </Title>
                         <ul>{Menu.map(printListItem)}</ul>
                     </MenuNavigation>
@@ -58,17 +59,17 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-    padding:0 20px;
-    background-color:rgba(0,0,0,0.3);
+    padding: 0 20px;
+    background-color: rgba(0, 0, 0, 0.3);
 
     color: #fff;
     display: flex;
     height: ${props => props.theme.headerHeight};
     font-weight: bold;
-    align-items:center;
+    align-items: center;
 
     img {
-        margin-right:10px;
+        margin-right: 10px;
     }
 `;
 

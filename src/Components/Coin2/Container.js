@@ -8,8 +8,8 @@ class Container extends Component {
 
     componentWillMount() {
         const store = this.context;
-        store.setPageTitle("Coin Dashboard");
-        store.setLayoutPageLoaded("Coin Dashboard");
+        store.setPageTitle("Coin Dashboard2");
+        store.setLayoutPageLoaded("Coin Dashboard2");
     }
 
     componentDidMount() {}
