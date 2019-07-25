@@ -5,7 +5,7 @@ import Store from "../../store";
 const Presenter = () => (
     <Header>
         <Store.Consumer>
-            {store => <span>{store.pageTitle}</span>}
+            {store => <span>{store.pageInfo.pageTitle}</span>}
         </Store.Consumer>
     </Header>
 );
