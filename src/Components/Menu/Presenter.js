@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Menu from "../../Contains/Routes";
+import Menu, { siteName } from "../../Contains/Routes";
 import Store from "../../store";
 import logo from "../../assets/images/smile.svg";
 
@@ -40,7 +40,7 @@ const Presenter = () => (
                     <MenuNavigation>
                         <Title>
                             <img src={logo} alt="CODMIN" />
-                            <span>CODMIN</span>
+                            <span>{siteName}</span>
                         </Title>
                         <ul>{Menu.map(printListItem)}</ul>
                     </MenuNavigation>

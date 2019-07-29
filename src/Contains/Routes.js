@@ -1,6 +1,8 @@
 import Coin from "../Components/Coin";
 import Home from "../Components/Home";
 
+export const siteName = "CODMIN";
+
 const Menu = [
     {
         id: "Home",

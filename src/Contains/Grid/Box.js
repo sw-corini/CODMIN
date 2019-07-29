@@ -1,5 +1,6 @@
-import React, { useEffect, memo } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import ThreeSectionItem from "./ThreeSectionItem";
 
 const TitleHeader = styled.div``;
 
@@ -17,7 +18,11 @@ const GridBox = ({ title, data }) => {
             <ThreeSectionList>
                 <ul>
                     {data.map((item, index) => (
-                        <li key={index}>{item.title}</li>
+                        <ThreeSectionItem
+                            item={item}
+                            key={index}
+                            itemKey={index}
+                        />
                     ))}
                 </ul>
             </ThreeSectionList>

@@ -1,15 +1,19 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import Store from "../../store";
-import { getPageInfo } from "../../Contains/Routes";
 
-const Presenter = () => (
-    <Header>
-        <Store.Consumer>
-            {store => <span>{getPageInfo().title}</span>}
-        </Store.Consumer>
-    </Header>
-);
+const Presenter = () => {
+    useEffect(() => {
+        console.log("Header Rendered");
+    });
+    return (
+        <Header>
+            <Store.Consumer>
+                {store => <span>{store.pageTitle}</span>}
+            </Store.Consumer>
+        </Header>
+    );
+};
 
 const Header = styled.header`
     position: fixed;
