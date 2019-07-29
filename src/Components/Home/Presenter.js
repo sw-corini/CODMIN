@@ -1,51 +1,90 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { WidthProvider, Responsive } from "react-grid-layout";
 import Store from "../../store";
+import Grid, {
+    getLayoutFormLocalStorage,
+    saveLayoutToLocalStorage
+} from "../../Contains/GridLayout";
+import GridBox from "../../Contains/Box";
+import { getPageInfo } from "../../Contains/Routes";
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
+const layoutData = [
+    {
+        key: "1",
+        title: "Foreign Exchange",
+        data: [
+            {
+                title: "KRW/USD",
+                price: 1184.2,
+                variance: 0.0
+            },
+            {
+                title: "KRW/JPY",
+                price: 1090.35,
+                variance: 0.3
+            },
+            {
+                title: "KRW/EUR",
+                price: 1318.64,
+                variance: 0.05
+            },
+            {
+                title: "KRW/CNY",
+                price: 172.21,
+                variance: 0.03
+            },
+            {
+                title: "JYP/USD",
+                price: 108.67,
+                variance: 0.02
+            },
+            {
+                title: "USD/EUR",
+                price: 1.1147,
+                variance: 0.0021
+            },
+            {
+                title: "USD/INDEX",
+                price: 97.75,
+                variance: 0.2
+            }
+        ]
+    }
+];
 
-const Presenter = () => (
-    <Store.Consumer>
-        {store => {
-            const {
-                setGridLayout: {
-                    layouts,
-                    onLayoutChange,
-                    cols,
-                    rowHeight,
-                    gridMargin
-                }
-            } = store;
-            return (
-                <ResponsiveReactGridLayout
-                    className="layout"
-                    margin={gridMargin}
-                    cols={cols}
-                    rowHeight={rowHeight}
-                    layouts={layouts}
-                    onLayoutChange={(layout, layouts) => {
-                        onLayoutChange(layout, layouts);
-                    }}
-                >
-                    <div key="1">
-                        <span className="text">1</span>
-                    </div>
-                    <div key="2">
-                        <span className="text">1</span>
-                    </div>
-                    <div key="3">
-                        <span className="text">1</span>
-                    </div>
-                    <div key="4">
-                        <span className="text">1</span>
-                    </div>
-                    <div key="5">
-                        <span className="text">1</span>
-                    </div>
-                </ResponsiveReactGridLayout>
-            );
-        }}
-    </Store.Consumer>
-);
+const Presenter = ({ pageInfo }) => {
+    useEffect(() => {
+        console.log("Home Presenter");
+    });
 
+    return (
+        <Store.Consumer>
+            {store => {
+                const pageInfo = getPageInfo();
+                const pageId = pageInfo.id;
+                const layouts = getLayoutFormLocalStorage(pageId) || {};
+                const { cols, rowHeight, gridMargin } = Grid;
+                return (
+                    <ResponsiveReactGridLayout
+                        className="layout"
+                        margin={gridMargin}
+                        cols={cols}
+                        rowHeight={rowHeight}
+                        layouts={layouts}
+                        onLayoutChange={(layout, layouts) => {
+                            saveLayoutToLocalStorage(pageId, layouts);
+                        }}
+                    >
+                        {layoutData.map(item => (
+                            <div key={item.key}>
+                                <GridBox title={item.title} data={item.data} />
+                            </div>
+                        ))}
+                    </ResponsiveReactGridLayout>
+                );
+            }}
+        </Store.Consumer>
+    );
+};
 export default Presenter;

@@ -1,4 +1,4 @@
-export const getLayoutFormLocalStorage = (page, key) => {
+export const getLayoutFormLocalStorage = page => {
     let ls = {};
     if (global.localStorage) {
         try {
@@ -7,16 +7,22 @@ export const getLayoutFormLocalStorage = (page, key) => {
             /*Ignore*/
         }
     }
-    return ls[key];
+    return ls["layouts"];
 };
 
-export const saveLayoutToLocalStorage = (page, key, value) => {
+export const saveLayoutToLocalStorage = (page, value) => {
     if (global.localStorage) {
         global.localStorage.setItem(
             page,
             JSON.stringify({
-                [key]: value
+                layouts: value
             })
         );
     }
+};
+
+export default {
+    gridMargin: [20, 20],
+    rowHeight: 30,
+    cols: { lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }
 };
