@@ -3,24 +3,12 @@ import { ThemeProvider } from "styled-components";
 import Presenter from "./Presenter";
 import Store from "../../store";
 import theme from "../../Contains/Theme";
-import { getPageInfo } from "../../Contains/Routes";
 
 class Container extends Component {
     constructor(props) {
         super(props);
 
-        const pageInfo = getPageInfo();
-
-        this._setPageTitle = pageTitle => {
-            this.setState({
-                pageTitle
-            });
-        };
-
-        this.state = {
-            pageTitle: pageInfo.title,
-            setPageTitle: this._setPageTitle
-        };
+        this.state = {};
     }
 
     componentDidMount() {

@@ -8,9 +8,7 @@ const Presenter = () => {
     });
     return (
         <Header>
-            <Store.Consumer>
-                {store => <span>{store.pageTitle}</span>}
-            </Store.Consumer>
+            <Store.Consumer>{store => <span>검색부분</span>}</Store.Consumer>
         </Header>
     );
 };
