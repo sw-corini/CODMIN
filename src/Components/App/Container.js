@@ -11,9 +11,15 @@ class Container extends Component {
 
         const pageInfo = getPageInfo();
 
+        this._setPageTitle = pageTitle => {
+            this.setState({
+                pageTitle
+            });
+        };
+
         this.state = {
-            testState: "test",
-            pageTitle: pageInfo.title
+            pageTitle: pageInfo.title,
+            setPageTitle: this._setPageTitle
         };
     }
 

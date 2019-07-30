@@ -4,7 +4,7 @@ import Presenter from "./Presenter";
 class Container extends Component {
     state = {};
     render() {
-        return <Presenter {...this.state} />;
+        return <Presenter {...this.props} {...this.state} />;
     }
 }
 

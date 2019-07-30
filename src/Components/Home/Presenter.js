@@ -6,6 +6,7 @@ import Grid, {
     saveLayoutToLocalStorage
 } from "../../Contains/GridLayout";
 import GridBox from "../../Contains/Grid/Box";
+import { getPageInfo } from "../../Contains/Routes";
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 const layoutData = [
@@ -60,8 +61,9 @@ const Presenter = ({ pageInfo }) => {
     return (
         <Store.Consumer>
             {store => {
-                const { pageTitle } = store;
-                console.log(`pageTitle : ${pageTitle}`);
+                const pageInfo = getPageInfo();
+                const pageTitle = pageInfo.title;
+                document.title = pageTitle;
                 const layouts = getLayoutFormLocalStorage(pageTitle) || {};
                 const { cols, rowHeight, gridMargin } = Grid;
 
