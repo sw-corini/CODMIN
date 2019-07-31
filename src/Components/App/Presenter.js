@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "../Header";
-import Store from "../../store";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -34,25 +33,19 @@ const printRouteItem = item => (
 );
 
 const Presenter = () => (
-    <Store.Consumer>
-        {store => {
-            return (
-                <>
-                    <Router>
-                        <MenuNavigation>
-                            <Title>
-                                <img src={logo} alt="CODMIN" />
-                                <span>{siteName}</span>
-                            </Title>
-                            <ul>{Menu.map(printListItem)}</ul>
-                        </MenuNavigation>
-                        <Container>{Menu.map(printRouteItem)}</Container>
-                    </Router>
-                    <Header />
-                </>
-            );
-        }}
-    </Store.Consumer>
+    <>
+        <Router>
+            <MenuNavigation>
+                <Title>
+                    <img src={logo} alt="CODMIN" />
+                    <span>{siteName}</span>
+                </Title>
+                <ul>{Menu.map(printListItem)}</ul>
+            </MenuNavigation>
+            <Container>{Menu.map(printRouteItem)}</Container>
+        </Router>
+        <Header />
+    </>
 );
 
 const Container = styled.div`

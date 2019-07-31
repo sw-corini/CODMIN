@@ -1,12 +1,5 @@
 import React from "react";
-import Store from "../../store";
 
-const Presenter = () => (
-    <Store.Consumer>
-        {store => {
-            return <div>test</div>;
-        }}
-    </Store.Consumer>
-);
+const Presenter = () => <div>test</div>;
 
 export default Presenter;

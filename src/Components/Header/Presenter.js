@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import Store from "../../store";
 
 const Presenter = () => {
     useEffect(() => {
@@ -8,7 +7,7 @@ const Presenter = () => {
     });
     return (
         <Header>
-            <Store.Consumer>{store => <span>검색부분</span>}</Store.Consumer>
+            <span>검색부분</span>
         </Header>
     );
 };

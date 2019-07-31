@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { ThemeProvider } from "styled-components";
 import Presenter from "./Presenter";
-import Store from "../../store";
 import theme from "../../Contains/Theme";
 
 class Container extends Component {
@@ -18,9 +17,7 @@ class Container extends Component {
     render() {
         return (
             <ThemeProvider theme={theme}>
-                <Store.Provider value={this.state}>
-                    <Presenter />
-                </Store.Provider>
+                <Presenter />
             </ThemeProvider>
         );
     }
