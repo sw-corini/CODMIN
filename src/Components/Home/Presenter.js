@@ -13,30 +13,28 @@ const Presenter = ({ layoutData }) => {
     useEffect(() => {
         console.log("Home Presenter");
     });
-    {
-        const pageInfo = getPageInfo();
-        const pageTitle = pageInfo.title;
-        const layouts = getLayoutFormLocalStorage(pageTitle) || {};
-        const { cols, rowHeight, gridMargin } = Grid;
+    const pageInfo = getPageInfo();
+    const pageTitle = pageInfo.title;
+    const layouts = getLayoutFormLocalStorage(pageTitle) || {};
+    const { cols, rowHeight, gridMargin } = Grid;
 
-        return (
-            <ResponsiveReactGridLayout
-                className="layout"
-                margin={gridMargin}
-                cols={cols}
-                rowHeight={rowHeight}
-                layouts={layouts}
-                onLayoutChange={(layout, layouts) => {
-                    saveLayoutToLocalStorage(pageTitle, layouts);
-                }}
-            >
-                {layoutData.map(item => (
-                    <div key={item.key}>
-                        <GridBox title={item.title} data={item.data} />
-                    </div>
-                ))}
-            </ResponsiveReactGridLayout>
-        );
-    }
+    return (
+        <ResponsiveReactGridLayout
+            className="layout"
+            margin={gridMargin}
+            cols={cols}
+            rowHeight={rowHeight}
+            layouts={layouts}
+            onLayoutChange={(layout, layouts) => {
+                saveLayoutToLocalStorage(pageTitle, layouts);
+            }}
+        >
+            {layoutData.map(item => (
+                <div key={item.key}>
+                    <GridBox title={item.title} data={item.data} />
+                </div>
+            ))}
+        </ResponsiveReactGridLayout>
+    );
 };
 export default Presenter;
