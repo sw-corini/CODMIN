@@ -2,8 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./Components/App";
 import { createGlobalStyle } from "styled-components";
-import "./assets/css/react-grid-layout.css";
-import "./assets/css/react-resizable.css";
 import "./assets/css/common.css";
 import "./Contains/FontAwesome";
 import reset from "styled-reset";

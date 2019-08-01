@@ -7,7 +7,7 @@ import Menu, { siteName } from "../../Contains/Routes";
 import logo from "../../assets/images/smile.svg";
 
 const printListItem = item => {
-    const { id, link, name, icon } = item;
+    const { id, link, title, icon } = item;
     return (
         <li key={id}>
             <NavLink
@@ -16,7 +16,7 @@ const printListItem = item => {
                 to={link}
             >
                 <FontAwesomeIcon icon={icon} />
-                {name}
+                {title}
             </NavLink>
         </li>
     );
