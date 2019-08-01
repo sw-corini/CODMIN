@@ -18,10 +18,9 @@ a {
 .react-grid-item {
     background-color: #fff;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);
-    border-radius: 6px;
 }
 .react-grid-item.react-grid-placeholder {
-    background: #999;
+    background: #999 !important;
 }
 .react-grid-item > .react-resizable-handle::after {
     border-color: rgba(255, 255, 255, 0.7);

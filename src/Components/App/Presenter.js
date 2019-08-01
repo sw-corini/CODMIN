@@ -27,7 +27,7 @@ const printRouteItem = item => (
         path={item.link}
         exact
         render={props => {
-            return <item.component />;
+            return <item.component id={item.id} title={item.title} />;
         }}
     />
 );

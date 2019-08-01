@@ -29,4 +29,6 @@ export const getPageInfo = () => {
     return thisRoute[0] || {};
 };
 
+export const getPageTitle = getPageInfo().title;
+
 export default Menu;
