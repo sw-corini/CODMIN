@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { WidthProvider, Responsive } from "react-grid-layout";
 import gridLayout, {
     getLayoutFormLocalStorage,
@@ -8,6 +8,9 @@ import gridLayout, {
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
 const Presenter = ({ pageId }) => {
+    useEffect(() => {
+        console.log("Home Presenter Rendered");
+    });
     const layouts = getLayoutFormLocalStorage(pageId) || {};
     const { gridMargin, rowHeight, cols } = gridLayout;
     const onLayoutChange = (_, layouts) => {
@@ -22,7 +25,11 @@ const Presenter = ({ pageId }) => {
             layouts={layouts}
             onLayoutChange={onLayoutChange}
         >
-            <div key="1">test</div>
+            {Array(30)
+                .fill(1)
+                .map((_, index) => (
+                    <div key={index}>test{index}</div>
+                ))}
         </ResponsiveReactGridLayout>
     );
 };
