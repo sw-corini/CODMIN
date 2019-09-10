@@ -4,4 +4,3 @@ const dataMap = () => {};
 
 export default dataMap;
 
-//test
